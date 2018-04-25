@@ -168,9 +168,10 @@ class Geetest
         if (function_exists('curl_exec')) {
 
             $ch = curl_init();
-
             curl_setopt($ch, CURLOPT_URL, $url);
+
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
             curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, self::$connectTimeout);
             curl_setopt($ch, CURLOPT_TIMEOUT, self::$socketTimeout);
